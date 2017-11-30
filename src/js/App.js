@@ -21,6 +21,8 @@ import Form from 'grommet/components/Form'
 import FormField from 'grommet/components/FormField'
 import TextInput from 'grommet/components/TextInput'
 
+import Image from 'grommet/components/Image'
+
 import Menu from 'grommet/components/Menu'
 
 // Footer
@@ -30,10 +32,10 @@ export default class BasicApp extends Component {
     render() {
         return (
             <App centered={false}>
-                <Header justify='between'>
-                    <a href='/'>
-                        <img height="62px" width="190px" src="/img/optimum-title-logo.png" />
-                    </a>
+                <Header pad='medium' justify='between'>
+                    <Box size='small'>
+                        <Image src="/img/optimum-logo-title-dark.png" />
+                    </Box>
 
                     <Menu direction='row' inline={true}>
                         <Button
@@ -105,37 +107,35 @@ export default class BasicApp extends Component {
                     </Box>
                 </Box>
 
-                <Box pad={{vertical: 'large'}}>
-                    <Box size='large' alignSelf='center' textAlign='left'>
-                        <Form>
-                            <Heading>Contact Us</Heading>
-                            <Paragraph>
-                                Questions, comments, or concerns? Feel free to reach out.
-                                <br />
-                                <br />
-                                You may prefer to message us on one of our social media
-                                pages; the links are in the footer.
-                            </Paragraph>
-                            <FormField label='Name'>
-                                <TextInput />
-                            </FormField>
-                            <FormField label='Email'>
-                                <TextInput />
-                            </FormField>
-                            <FormField label='Message'>
-                                <textarea />
-                            </FormField>
+                <Box pad={{vertical: 'large'}} justify='center' direction='row'>
+                    <Form>
+                        <Heading>Contact Us</Heading>
+                        <Paragraph>
+                            Questions, comments, or concerns? Feel free to reach out.
+                            <br />
+                            <br />
+                            You may prefer to message us on one of our social media
+                            pages; the links are in the footer.
+                        </Paragraph>
+                        <FormField label='Name'>
+                            <TextInput />
+                        </FormField>
+                        <FormField label='Email'>
+                            <TextInput />
+                        </FormField>
+                        <FormField label='Message'>
+                            <textarea />
+                        </FormField>
 
-                            <Button fill={true} href='https://developers.optimum.network'>
-                                <Box textAlign='center' colorIndex='neutral-4' basis='full' flex={true} pad='medium'>
-                                    Submit
-                                </Box>
-                            </Button>
-                        </Form>
-                    </Box>
+                        <Button fill={true} href='https://developers.optimum.network'>
+                            <Box textAlign='center' colorIndex='neutral-4' basis='full' flex={true} pad='medium'>
+                                Submit
+                            </Box>
+                        </Button>
+                    </Form>
                 </Box>
 
-                <Footer colorIndex='grey-1' direction='column'>
+                <Footer colorIndex='light-2' separator='top' direction='column'>
                     <Box pad='medium'>
                         <Menu justify='center' inline={true} direction='row'>
                             <Button target='_blank' icon={<RedditIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
@@ -147,7 +147,7 @@ export default class BasicApp extends Component {
 
                     <Box full='horizontal' justify='around' pad='small' direction='row'>
                         <Box>
-                            <img height="62px" width="190px" src="/img/optimum-title-logo-light.png" />
+                            <img height="62px" width="190px" src="/img/optimum-logo-title-dark.png" />
                         </Box>
 
                         <Box>
