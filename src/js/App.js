@@ -40,17 +40,17 @@ export default class BasicApp extends Component {
                     <Menu direction='row' inline={true}>
                         <Button
                             href='https://ddx.optimum.network'
-                            label='Derivatives Exchange & ICO'
+                            label='Derivatives Exchange Beta'
                             plain={true} />
 
-                        <Button
+                        {/* <Button
                             href='https://developers.optimum.network'
                             label='Token Exchange API'
-                            plain={true} />
-                        <Button
+                            plain={true} /> */}
+                        {/* <Button
                             href='https://dtx.optimum.network'
                             label='Token Exchange'
-                            plain={true} />
+                            plain={true} /> */}
                         <Button
                             href='https://medium.com/@optimum_network'
                             label='Blog'
@@ -66,16 +66,16 @@ export default class BasicApp extends Component {
                             <Heading>Derivatives Exchange</Heading>
 
                             <Paragraph size='large'>
-                                Optimum is developing the next generation
+                                Optimum has developed the next generation
                                 of derivatives exchange with our decentralized
-                                derivatives exchange protocol (DDXP) and API.
+                                derivatives exchange protocol (DDXP).
                             </Paragraph>
 
                             <Button
                                 href='https://ddx.optimum.network'
                                 target='_blank'
                                 primary={true}
-                                label='Learn More' />
+                                label='View Beta' />
                         </Box>
 
                         <Box style={{borderLeft: '1px dashed grey'}}>
@@ -86,23 +86,23 @@ export default class BasicApp extends Component {
                         </Box> */}
 
                         <Box pad='large' textAlign='right' size='large'>
-                            <Heading>Token Exchange API</Heading>
+                            <Heading>Derivatives Exchange API</Heading>
 
                             <Paragraph size='large'>
-                                Optimum supplies a decentralized token exchange API
+                                Optimum supplies a decentralized derivatives exchange API
                                 based on our open-source token exchange protocol.
                                 <br />
                                 <br />
-                                Our token exchange is free to use and does not
+                                Our API is free to use and does not
                                 involve any secondary protocol tokens.
                             </Paragraph>
 
                             <Button
                                 target='_blank'
-                                href='https://developers.optimum.network'
                                 plain={true}
-                                icon={<ShareIcon />}
-                                label='Developer Documentation' />
+                                // icon={<ShareIcon />}
+                                disabled={true}
+                                label='Documentation Coming Soon' />
                         </Box>
                     </Box>
                 </Box>
