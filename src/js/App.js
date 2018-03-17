@@ -12,7 +12,6 @@ import Title from 'grommet/components/Title'
 // Icons
 import ShareIcon from 'grommet/components/icons/base/Share'
 import RedditIcon from 'grommet/components/icons/base/SocialReddit'
-// import TelegramIcon from 'grommet/components/icons/base/SocialFacebook'
 import SVGIcon from 'grommet/components/SVGIcon'
 import GithubIcon from 'grommet/components/icons/base/SocialGithub'
 import TwitterIcon from 'grommet/components/icons/base/SocialTwitter'
@@ -42,6 +41,17 @@ class TelegramIcon extends Component {
     }
 }
 
+class SocialMenu extends Component {
+    render() {
+        return <Menu responsive={false} justify='center' inline={true} direction='row'>
+            <Button target='_blank' icon={<RedditIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
+            <Button target='_blank' icon={<TwitterIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
+            <Button target='_blank' icon={<GithubIcon />} href='https://github.com/optimum-network' plain={true} />
+            <Button target='_blank' icon={<TelegramIcon />} href='https://t.me/optimum' plain={true} />
+        </Menu>
+    }
+}
+
 export default class BasicApp extends Component {
     render() {
         return (
@@ -49,7 +59,7 @@ export default class BasicApp extends Component {
                 <Box colorIndex='warning' textAlign='center' align='center'>
                     <Paragraph size='medium' style={{margin: '0.2em'}}>
                         <strong>
-                            Looking for Optimum's <Anchor label='brand new demo?' />
+                            Looking for Optimum's <Anchor label='brand new demo?' target='_blank' href='https://ddx-demo.optimum.network' />
                         </strong>
                     </Paragraph>
                 </Box>
@@ -62,16 +72,25 @@ export default class BasicApp extends Component {
                         </Box>
 
                         <Menu direction='row' inline={true}>
-
-                            {/* <Button
-                                href='https://developers.optimum.network'
-                                label='Token Exchange API'
-                                plain={true} /> */}
-                            {/* <Button
-                                href='https://dtx.optimum.network'
-                                label='Token Exchange'
-                                plain={true} /> */}
                             <Button
+                                style={{fontWeight: 'bolder', color: 'white'}}
+                                href='#team'
+                                label='TEAM'
+                                plain={true} />
+                            <Button
+                                style={{fontWeight: 'bolder', color: 'white'}}
+                                href='https://t.me/optimum'
+                                target='_blank'
+                                label='TELEGRAM'
+                                plain={true} />
+
+                            <Button
+                                style={{fontWeight: 'bolder', color: 'white'}}
+                                href='#contact'
+                                label='CONTACT'
+                                plain={true} />
+                            <Button
+                                style={{fontWeight: 'bolder', color: 'white'}}
                                 href='https://medium.com/@optimum_network'
                                 label='BLOG'
                                 plain={true} />
@@ -99,19 +118,19 @@ export default class BasicApp extends Component {
 
 
                             <Box pad='large'>
-                                <Menu justify='center' inline={true} direction='row'>
-                                    <Button target='_blank' icon={<RedditIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
-                                    <Button target='_blank' icon={<TwitterIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
-                                    <Button target='_blank' icon={<GithubIcon />} href='https://github.com/optimum-network' plain={true} />
-                                    <Button target='_blank' icon={<TelegramIcon />} href='https://t.me/optimum' plain={true} />
-                                </Menu>
+                                <SocialMenu />
                             </Box>
-
                         </Box>
                     </Box>
                 </Box>
 
-                <Box pad={{vertical: 'large', horizontal: 'small'}} justify='center' direction='row'>
+                <Box id='roadmap' align='center' colorIndex='light-2'>
+                    <Box size='xxlarge' pad='large' align='center'>
+                        <img src='img/roadmap.png' />
+                    </Box>
+                </Box>
+
+                <Box id='contact' full={true} align='center' pad={{vertical: 'large', horizontal: 'small'}} justify='center' direction='row'>
                     <Form>
                         <Heading>Contact Us</Heading>
                         <Paragraph>
@@ -139,19 +158,14 @@ export default class BasicApp extends Component {
                     </Form>
                 </Box>
 
-                <Footer colorIndex='light-2' separator='top' direction='column'>
+                <Footer colorIndex='grey-2' direction='column'>
                     <Box pad='medium'>
-                        <Menu justify='center' inline={true} direction='row'>
-                            <Button target='_blank' icon={<RedditIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
-                            <Button target='_blank' icon={<TwitterIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
-                            <Button target='_blank' icon={<GithubIcon />} href='https://github.com/optimum-network' plain={true} />
-                            {/* <Button target='_blank' icon={<FacebookIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} /> */}
-                        </Menu>
+                        <SocialMenu />
                     </Box>
 
                     <Box full='horizontal' justify='around' pad='small' direction='row'>
                         <Box>
-                            <Image size='small'  src="/img/optimum-logo-title-dark.png" />
+                            <Image size='small'  src="/img/optimum-logo-title-light.png" />
                         </Box>
 
                         <Box>
@@ -159,6 +173,12 @@ export default class BasicApp extends Component {
                                 © Crypto Asset Ventures 2018. All rights reserved.
                             </Paragraph>
                         </Box>
+                    </Box>
+
+                    <Box align='center' textAlign='center' pad='small'>
+                        <small>
+                            Cover photo provided by Andreas Poike via Flickr. <Anchor href='https://www.flickr.com/photos/andreas_poike' label='https://www.flickr.com/photos/andreas_poike' />
+                        </small>
                     </Box>
                 </Footer>
             </App>
