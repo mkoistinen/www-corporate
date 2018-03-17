@@ -130,6 +130,11 @@ export default class BasicApp extends Component {
                     </Box>
                 </Box>
 
+                <Box id='tutorial' align='center' colorIndex='neutral-4' pad='large'>
+                    <Heading strong={true}>Beta Tutorial</Heading>
+                    <iframe style={{border: 0}} src="https://drive.google.com/file/d/1fqQZjJ91TVSdPgyz3XrF7JfvGmMdt6BX/preview" width="640" height="480"></iframe>
+                </Box>
+
                 <Box id='contact' full={true} align='center' pad={{vertical: 'large', horizontal: 'small'}} justify='center' direction='row'>
                     <Form>
                         <Heading>Contact Us</Heading>
