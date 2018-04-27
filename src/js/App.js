@@ -173,27 +173,30 @@ export default class BasicApp extends Component {
                 </Box>
 
                 <Box id='contact' full={true} align='center' pad={{vertical: 'large', horizontal: 'small'}} justify='center' direction='row'>
-                    <Form>
+                    <Form method='post'>
+                        {/* Netlify form config */}
+                        <input type="hidden" name="form-name" value="contact" />
+
                         <Heading>Contact Us</Heading>
                         <Paragraph>
-                            Questions, comments, or concerns? Feel free to reach out.
+                            Interested in Optimum? We'd love to hear from you.
                             <br />
                             <br />
                             You may prefer to message us on one of our social media
                             pages; the links are in the footer.
                         </Paragraph>
                         <FormField label='Name'>
-                            <TextInput />
+                            <TextInput name='name' />
                         </FormField>
                         <FormField label='Email'>
-                            <TextInput />
+                            <TextInput type='email' name='email' />
                         </FormField>
                         <FormField label='Message'>
-                            <textarea />
+                            <textarea rows='4' name='message' />
                         </FormField>
 
-                        <Button fill={true} href='https://developers.optimum.network'>
-                            <Box textAlign='center' colorIndex='neutral-4' basis='full' flex={true} pad='medium'>
+                        <Button fill={true} type='submit' style={{border: 0}}>
+                            <Box margin={{top: 'small'}} textAlign='center' colorIndex='neutral-4' basis='full' flex={true} pad='medium'>
                                 Submit
                             </Box>
                         </Button>
