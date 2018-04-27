@@ -54,6 +54,33 @@ class SocialMenu extends Component {
 
 export default class BasicApp extends Component {
     render() {
+
+        const team = {
+            chris: {
+                name: 'Chris Perna',
+                bio: `Chris leads Optimum’s Operations and Business Development efforts.
+                    Chris' previous experience in growing both early stage startups and established
+                    technology leaders brings a robust perspective to the cryptocurrency market.
+                    Chis has held positions at: LSI Logic, Integrated Devices Technologies,
+                    ComScore Semiconductor ACT Networks, and NXP Semiconductor.`,
+                image: 'chris',
+                role: 'COO | FOUNDER'
+            },
+            brian: {
+                name: 'Brian Wheeler',
+                bio:  `Brian is responsible for Optimum's technology stack.
+                        Building a platform with a fantastic user experience,
+                        high level of availability, and gold-standard security
+                        is at the center of Brian's mission.
+                        Brian's interest in blockchain began in 2015, two years later
+                        he discovered Ethereum and has been passionate about
+                        developing decentralized technology ever since.
+                    `,
+                image: 'brian',
+                role: 'CTO | FOUNDER'
+            }
+        }
+
         return (
             <App centered={false}>
                 <Box colorIndex='warning' textAlign='center' align='center'>
@@ -135,6 +162,16 @@ export default class BasicApp extends Component {
                     <iframe style={{border: 0}} src="https://drive.google.com/file/d/1fqQZjJ91TVSdPgyz3XrF7JfvGmMdt6BX/preview" width="640" height="480"></iframe>
                 </Box>
 
+                <Box id='team' align='center' colorIndex='neutral-1-a' pad='large'>
+                    <Box size='xxlarge'>
+                        <Heading strong={true}>Team</Heading>
+                        <Box direction='row' justify='around'>
+                            <TeamMember info={team.brian} />
+                            <TeamMember info={team.chris} />
+                        </Box>
+                    </Box>
+                </Box>
+
                 <Box id='contact' full={true} align='center' pad={{vertical: 'large', horizontal: 'small'}} justify='center' direction='row'>
                     <Form>
                         <Heading>Contact Us</Heading>
@@ -188,5 +225,30 @@ export default class BasicApp extends Component {
                 </Footer>
             </App>
         );
+    }
+}
+
+class TeamMember extends Component {
+    render() {
+        const { info: { name, image, bio, role } } = this.props
+
+        return <Box size='medium'>
+            <Box align='center'>
+                <Box>
+                    <Image style={{borderRadius: '50%', filter: 'grayscale(100%)'}} size='small' src={`img/team/${image}.jpg`} />
+                    </Box>
+                    <span style={{fontSize: '1.5em'}}>
+                        <b>{name}</b>
+                    </span>
+                    <span>
+                        {role}
+                    </span>
+            </Box>
+            <Box pad='small'>
+                <span>
+                    {bio}
+                </span>
+            </Box>
+        </Box>
     }
 }
