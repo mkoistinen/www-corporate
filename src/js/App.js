@@ -60,9 +60,9 @@ export default class BasicApp extends Component {
                 name: 'Chris Perna',
                 bio: `Chris leads Optimum’s Operations and Business Development efforts.
                     Chris' previous experience in growing both early stage startups and established
-                    technology leaders brings a robust perspective to the cryptocurrency market.
+                    technology leaders brings a robust perspective to the decentralized technology market.
                     Chis has held positions at: LSI Logic, Integrated Devices Technologies,
-                    ComScore Semiconductor ACT Networks, and NXP Semiconductor.`,
+                    Comcore Semiconductor ACT Networks, and NXP Semiconductor.`,
                 image: 'chris',
                 role: 'COO | FOUNDER'
             },
@@ -72,7 +72,7 @@ export default class BasicApp extends Component {
                         Building a platform with a fantastic user experience,
                         high level of availability, and gold-standard security
                         is at the center of Brian's mission.
-                        Brian's interest in blockchain began in 2015, two years later
+                        Brian's interest in decentralized technology began in 2015, two years later
                         he discovered Ethereum and has been passionate about
                         developing decentralized technology ever since.
                     `,
@@ -215,7 +215,7 @@ export default class BasicApp extends Component {
 
                         <Box>
                             <Paragraph>
-                                © Crypto Asset Ventures 2018. All rights reserved.
+                                © DECENTRALIZED TECHNOLOGY VENTURES 2018. ALL RIGHTS RESERVED.
                             </Paragraph>
                         </Box>
                     </Box>
@@ -239,13 +239,13 @@ class TeamMember extends Component {
             <Box align='center'>
                 <Box>
                     <Image style={{borderRadius: '50%', filter: 'grayscale(100%)'}} size='small' src={`img/team/${image}.jpg`} />
-                    </Box>
-                    <span style={{fontSize: '1.5em'}}>
-                        <b>{name}</b>
-                    </span>
-                    <span>
-                        {role}
-                    </span>
+                </Box>
+                <span style={{fontSize: '1.5em'}}>
+                    <b>{name}</b>
+                </span>
+                <span>
+                    {role}
+                </span>
             </Box>
             <Box pad='small'>
                 <span>
