@@ -45,7 +45,7 @@ class SocialMenu extends Component {
     render() {
         return <Menu responsive={false} justify='center' inline={true} direction='row'>
             <Button target='_blank' icon={<RedditIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
-            <Button target='_blank' icon={<TwitterIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
+            <Button target='_blank' icon={<TwitterIcon />} href='https://twitter.com/optimum_network' plain={true} />
             <Button target='_blank' icon={<GithubIcon />} href='https://github.com/optimum-network' plain={true} />
             <Button target='_blank' icon={<TelegramIcon />} href='https://t.me/optimum' plain={true} />
         </Menu>
