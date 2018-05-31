@@ -15,6 +15,7 @@ import RedditIcon from 'grommet/components/icons/base/SocialReddit'
 import SVGIcon from 'grommet/components/SVGIcon'
 import GithubIcon from 'grommet/components/icons/base/SocialGithub'
 import TwitterIcon from 'grommet/components/icons/base/SocialTwitter'
+import MediumIcon from 'grommet/components/icons/base/SocialMedium'
 
 // Form
 import Form from 'grommet/components/Form'
@@ -48,6 +49,7 @@ class SocialMenu extends Component {
             <Button target='_blank' icon={<TwitterIcon />} href='https://twitter.com/optimum_network' plain={true} />
             <Button target='_blank' icon={<GithubIcon />} href='https://github.com/optimum-network' plain={true} />
             <Button target='_blank' icon={<TelegramIcon />} href='https://t.me/optimum' plain={true} />
+            <Button target='_blank' icon={<MediumIcon />} href='https://medium.com/@optimum_network' plain={true} />
         </Menu>
     }
 }
@@ -83,13 +85,13 @@ export default class BasicApp extends Component {
 
         return (
             <App centered={false}>
-                <Box colorIndex='warning' textAlign='center' align='center'>
+                {/* <Box colorIndex='warning' textAlign='center' align='center'>
                     <Paragraph size='medium' style={{margin: '0.2em'}}>
                         <strong>
-                            Looking for Optimum's <Anchor label='brand new demo?' target='_blank' href='https://ddx-demo.optimum.network' />
+                            Looking for Optimum's <Anchor label='brand new release?' target='_blank' href='https://exchange.optimum.network' />
                         </strong>
                     </Paragraph>
-                </Box>
+                </Box> */}
                 <Box colorIndex='grey-1' full={true} style={{
                         backgroundImage: 'url("/img/finance.jpg")'
                     }}>
@@ -127,20 +129,20 @@ export default class BasicApp extends Component {
                     <Box>
                         <Box alignSelf='center' textAlign='center' pad='large' margin={{top: 'large'}} size='xlarge'>
                             <Heading tag='h1' strong={true}>
-                                The next generation of financial derivatives.
+                                Decentralized options trading.
                             </Heading>
                             <Paragraph size='large'>
                                 <strong>
-                                    Decentralized ERC20/ETH derivative contracts for the tokenized future.
+                                    Peer-to-peer decentralized exchange for CALL and PUT options on ETH.
                                 </strong>
                             </Paragraph>
 
                             <Box align='center' pad='large'>
                                 <Button
-                                    href='https://ddx-demo.optimum.network'
+                                    href='https://exchange.optimum.network'
                                     target='_blank'
                                     primary={true}
-                                    label='TESTNET DEMO' />
+                                    label='START TRADING' />
                             </Box>
 
 
