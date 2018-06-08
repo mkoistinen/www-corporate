@@ -10,6 +10,7 @@ import Paragraph from 'grommet/components/Paragraph'
 import Title from 'grommet/components/Title'
 
 // Icons
+import ActionIcon from 'grommet/components/icons/base/Action'
 import ShareIcon from 'grommet/components/icons/base/Share'
 import RedditIcon from 'grommet/components/icons/base/SocialReddit'
 import SVGIcon from 'grommet/components/SVGIcon'
@@ -92,41 +93,61 @@ export default class BasicApp extends Component {
                         </strong>
                     </Paragraph>
                 </Box> */}
-                <Box colorIndex='grey-1' full={true} style={{
-                        backgroundImage: 'url("/img/finance.jpg")'
+                <Box colorIndex='light-1' full={true} style={{
+                        // backgroundImage: 'url("/img/finance.jpg")'
                     }}>
                     <Header style={{background: 'none'}} pad='medium' justify='between'>
                         <Box size='small'>
-                            <Image src="/img/optimum-logo-title-light.png" />
+                            <Image src="/img/optimum-logo-title-dark.png" />
                         </Box>
 
                         <Menu direction='row' inline={true}>
                             <Button
-                                style={{fontWeight: 'bolder', color: 'white'}}
+                                // style={{fontWeight: 'bolder', color: 'white'}}
                                 href='#team'
                                 label='TEAM'
                                 plain={true} />
                             <Button
-                                style={{fontWeight: 'bolder', color: 'white'}}
+                                // style={{fontWeight: 'bolder', color: 'white'}}
                                 href='https://t.me/optimum'
                                 target='_blank'
                                 label='TELEGRAM'
                                 plain={true} />
 
                             <Button
-                                style={{fontWeight: 'bolder', color: 'white'}}
+                                // style={{fontWeight: 'bolder', color: 'white'}}
                                 href='#contact'
                                 label='CONTACT'
                                 plain={true} />
                             <Button
-                                style={{fontWeight: 'bolder', color: 'white'}}
+                                // style={{fontWeight: 'bolder', color: 'white'}}
                                 href='https://medium.com/@optimum_network'
                                 label='BLOG'
                                 plain={true} />
                         </Menu>
                     </Header>
 
-                    <Box>
+                    <Box pad='large' margin={{top: 'large'}} basis='full' style={{backgroundImage: "url('/img/squared-triangles.png')", backgroundSize: 'contain'}}>
+                        <Box size='xxlarge'>
+                            <Heading tag='h1' style={{fontSize: '5em'}} strong={true}>
+                                Decentralized options trading.
+                            </Heading>
+                            <Paragraph size='large'>
+                                <b>
+                                    Peer-to-peer decentralized exchange for CALL and PUT options on ETH.
+                                </b>
+                            </Paragraph>
+
+                            <Box direction='row'>
+                                <Box margin={{right: 'large'}}>
+                                    <Button href='/' label='LEARN MORE' />
+                                </Box>
+                                <Button href='/' primary={true} label='START TRADING' />
+                            </Box>
+                        </Box>
+                    </Box>
+
+                    {/* <Box>
                         <Box alignSelf='center' textAlign='center' pad='large' margin={{top: 'large'}} size='xlarge'>
                             <Heading tag='h1' strong={true}>
                                 Decentralized options trading.
@@ -150,11 +171,34 @@ export default class BasicApp extends Component {
                                 <SocialMenu />
                             </Box>
                         </Box>
-                    </Box>
+                    </Box> */}
                 </Box>
 
                 <Box id='roadmap' align='center' colorIndex='light-2'>
+                    <Box direction='row' size='xxlarge' justify='around' align='center'>
+                        <Box size='medium'>
+                            <Box responsive={false} colorIndex='neutral-3-a' direction='row' justify='between' align='center' pad={{horizontal: 'small'}}>
+                                <Box pad={{vertical: 'small'}}>
+                                    Q3: API RELEASE
+                                </Box>
+                                <ActionIcon />
+                            </Box>
+                            <Box colorIndex='light-1' pad={{vertical: 'small'}}>
+                                <ul>
+                                    <li>Programmable API for algorithmic traders</li>
+                                </ul>
+                            </Box>
+                        </Box>
+                        <Box colorIndex='neutral-3-a' style={{borderRadius: '50%', padding: '4px', height: '60px', width: '60px'}}>
+                            <Box colorIndex='light-1' style={{width: '100%', height: '100%', borderRadius: '50%'}} align='center' justify='center'>
+                                Q3
+                            </Box>
+                        </Box>
+                        <Box size='medium'>
+                        </Box>
+                    </Box>
                     <Box size='xxlarge' pad='large' align='center'>
+                        <Heading tag='h2'>Roadmap</Heading>
                         <img src='img/roadmap.png' />
                     </Box>
                 </Box>
