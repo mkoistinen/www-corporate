@@ -143,7 +143,7 @@ export default class BasicApp extends Component {
                                     <Button href='/' label='LEARN MORE' />
                                 </Box>
                                 <Box margin={{right: 'large', top: 'medium'}}>
-                                    <Button href='/' primary={true} label='START TRADING' />
+                                    <Button href='https://exchange.optimum.network' target='_blank' primary={true} label='START TRADING' />
                                 </Box>
                             </Box>
                         </Box>
