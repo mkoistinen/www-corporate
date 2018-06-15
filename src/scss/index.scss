@@ -1,1 +1,11 @@
 @import '~grommet/scss/vanilla/index';
+
+html body .main-heading {
+    font-size: 6em;
+}
+
+@media (max-width: 45em) {
+    html body .main-heading {
+        font-size: 3em;
+    }
+}

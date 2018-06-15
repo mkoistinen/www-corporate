@@ -127,9 +127,9 @@ export default class BasicApp extends Component {
                         </Menu>
                     </Header>
 
-                    <Box pad='large' margin={{top: 'large'}} basis='full' style={{backgroundImage: "url('/img/squared-triangles.png')", backgroundSize: 'contain'}}>
+                    <Box pad='large' margin={{top: 'large'}} basis='full' style={{backgroundImage: "url('/img/triangle-bg.png')", backgroundSize: 'contain'}}>
                         <Box size='xxlarge'>
-                            <Heading tag='h1' style={{fontSize: '5em'}} strong={true}>
+                            <Heading tag='h1' className='main-heading' strong={true}>
                                 Decentralized options trading.
                             </Heading>
                             <Paragraph size='large'>
@@ -139,10 +139,12 @@ export default class BasicApp extends Component {
                             </Paragraph>
 
                             <Box direction='row'>
-                                <Box margin={{right: 'large'}}>
+                                <Box margin={{right: 'large', top: 'medium'}}>
                                     <Button href='/' label='LEARN MORE' />
                                 </Box>
-                                <Button href='/' primary={true} label='START TRADING' />
+                                <Box margin={{right: 'large', top: 'medium'}}>
+                                    <Button href='/' primary={true} label='START TRADING' />
+                                </Box>
                             </Box>
                         </Box>
                     </Box>
@@ -175,7 +177,7 @@ export default class BasicApp extends Component {
                 </Box>
 
                 <Box id='roadmap' align='center' colorIndex='light-2'>
-                    <Box direction='row' size='xxlarge' justify='around' align='center'>
+                    {/* <Box direction='row' size='xxlarge' justify='around' align='center'>
                         <Box size='medium'>
                             <Box responsive={false} colorIndex='neutral-3-a' direction='row' justify='between' align='center' pad={{horizontal: 'small'}}>
                                 <Box pad={{vertical: 'small'}}>
@@ -196,7 +198,7 @@ export default class BasicApp extends Component {
                         </Box>
                         <Box size='medium'>
                         </Box>
-                    </Box>
+                    </Box> */}
                     <Box size='xxlarge' pad='large' align='center'>
                         <Heading tag='h2'>Roadmap</Heading>
                         <img src='img/roadmap.png' />
