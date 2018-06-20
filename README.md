@@ -1,6 +1,4 @@
-# corporate
-
-This is a sample Grommet application for reference.
+# Optimum Corporate
 
 To run this application, execute the following commands:
 
@@ -27,3 +25,7 @@ To run this application, execute the following commands:
     ```
     $ npm test
     ```
+
+## Component Documentation
+
+This site uses Grommet for prebuilt react components: http://grommet.io/docs/components/
