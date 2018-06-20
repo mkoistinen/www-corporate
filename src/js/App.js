@@ -110,7 +110,7 @@ class TeamMember extends Component {
           <span className='meta-bio'>{bio}</span>
         </Box>
         <Box className='meta-link' align='center'>
-          <Anchor href={linkedin}>
+          <Anchor target='_blank' href={linkedin}>
             <LinkedInIcon size='medium' colorIndex='grey-1' />
           </Anchor>
         </Box>
@@ -161,7 +161,7 @@ export default class BasicApp extends Component {
         <Box colorIndex='light-1' full={true}>
           <Header
             className='header'
-            colorIndex='light-2'
+            colorIndex='light-1'
             pad='medium'
             justify='between'>
 
@@ -172,25 +172,25 @@ export default class BasicApp extends Component {
             <Menu className='primary-menu' direction='row' inline={true}>
               <Button
                 href='#team'
-                label='Team'
+                label='TEAM'
                 plain={true} />
 
               <Button
                 className='external-link'
                 href='https://t.me/optimum'
                 target='_blank'
-                label='Telegram'
+                label='TELEGRAM'
                 plain={true} />
 
               <Button
                 href='#contact'
-                label='Contact'
+                label='CONTACT'
                 plain={true} />
 
               <Button
                 className='external-link'
                 href='https://medium.com/@optimum_network'
-                label='Blog'
+                label='BLOG'
                 plain={true} />
             </Menu>
           </Header>
@@ -216,7 +216,7 @@ export default class BasicApp extends Component {
                 <Box margin={{ right: 'large', top: 'medium' }}>
                   <Button
                     className='action-btn'
-                    href='/#TODO'
+                    href='/#tutorial'
                     label='Learn More' />
                 </Box>
                 <Box margin={{ right: 'large', top: 'medium' }}>
@@ -229,34 +229,6 @@ export default class BasicApp extends Component {
                 </Box>
               </Box>
             </Box>
-          </Box>
-        </Box>
-
-        <Box
-          id='tutorial'
-          align='center'
-          colorIndex='light-2'
-          pad='large'>
-          <Heading className='section-header'>
-            How It Works
-          </Heading>
-          <iframe
-            title='preview'
-            style={{ border: 0 }}
-            src='https://drive.google.com/file/d/1fqQZjJ91TVSdPgyz3XrF7JfvGmMdt6BX/preview'
-            width='640'
-            height='480'
-          />
-        </Box>
-
-        <Box
-          id='roadmap'
-          align='center'
-          colorIndex='light-1'
-        >
-          <Box size='xxlarge' pad='large' align='center'>
-            <Heading className='section-header'>Roadmap</Heading>
-            <img src='img/roadmap.png' alt='roadmap' />
           </Box>
         </Box>
 
@@ -274,6 +246,35 @@ export default class BasicApp extends Component {
               <TeamMember info={team.martin} />
             </Box>
           </Box>
+        </Box>
+
+        <Box
+          id='roadmap'
+          align='center'
+          colorIndex='light-1'
+        >
+          <Box size='xxlarge' pad='large' align='center'>
+            <Heading className='section-header'>Roadmap</Heading>
+            <img src='img/roadmap.png' alt='roadmap' />
+          </Box>
+        </Box>
+
+        <Box
+          id='tutorial'
+          align='center'
+          pad='large'
+          colorIndex='light-2'
+          pad='large'>
+          <Heading className='section-header'>
+            How It Works
+          </Heading>
+          <iframe
+            title='preview'
+            style={{ border: 0 }}
+            src='https://drive.google.com/file/d/1fqQZjJ91TVSdPgyz3XrF7JfvGmMdt6BX/preview'
+            width='640'
+            height='480'
+          />
         </Box>
 
         <Box
