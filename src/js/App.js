@@ -1,34 +1,35 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import Anchor from 'grommet/components/Anchor'
-import App from 'grommet/components/App'
-import Box from 'grommet/components/Box'
-import Button from 'grommet/components/Button'
-import Header from 'grommet/components/Header'
-import Heading from 'grommet/components/Heading'
-import Paragraph from 'grommet/components/Paragraph'
-import Title from 'grommet/components/Title'
+import Anchor from 'grommet/components/Anchor';
+import App from 'grommet/components/App';
+import Box from 'grommet/components/Box';
+import Button from 'grommet/components/Button';
+import Header from 'grommet/components/Header';
+import Heading from 'grommet/components/Heading';
+import Paragraph from 'grommet/components/Paragraph';
+// import Title from 'grommet/components/Title';
 
 // Icons
-import ActionIcon from 'grommet/components/icons/base/Action'
-import ShareIcon from 'grommet/components/icons/base/Share'
-import RedditIcon from 'grommet/components/icons/base/SocialReddit'
-import SVGIcon from 'grommet/components/SVGIcon'
-import GithubIcon from 'grommet/components/icons/base/SocialGithub'
-import TwitterIcon from 'grommet/components/icons/base/SocialTwitter'
-import MediumIcon from 'grommet/components/icons/base/SocialMedium'
+// import ActionIcon from 'grommet/components/icons/base/Action';
+// import ShareIcon from 'grommet/components/icons/base/Share';
+import GithubIcon from 'grommet/components/icons/base/SocialGithub';
+import MediumIcon from 'grommet/components/icons/base/SocialMedium';
+import RedditIcon from 'grommet/components/icons/base/SocialReddit';
+import SVGIcon from 'grommet/components/SVGIcon';
+import TwitterIcon from 'grommet/components/icons/base/SocialTwitter';
 
 // Form
-import Form from 'grommet/components/Form'
-import FormField from 'grommet/components/FormField'
-import TextInput from 'grommet/components/TextInput'
+import Form from 'grommet/components/Form';
+import FormField from 'grommet/components/FormField';
+import TextInput from 'grommet/components/TextInput';
 
-import Image from 'grommet/components/Image'
+import Image from 'grommet/components/Image';
 
-import Menu from 'grommet/components/Menu'
+import Menu from 'grommet/components/Menu';
 
 // Footer
-import Footer from 'grommet/components/Footer'
+import Footer from 'grommet/components/Footer';
 
 class TelegramIcon extends Component {
   render() {
@@ -49,262 +50,309 @@ class TelegramIcon extends Component {
 }
 
 class SocialMenu extends Component {
-    render() {
-        return <Menu responsive={false} justify='center' inline={true} direction='row'>
-            <Button target='_blank' icon={<RedditIcon />} href='https://reddit.com/r/OptimumNetwork' plain={true} />
-            <Button target='_blank' icon={<TwitterIcon />} href='https://twitter.com/optimum_network' plain={true} />
-            <Button target='_blank' icon={<GithubIcon />} href='https://github.com/optimum-network' plain={true} />
-            <Button target='_blank' icon={<TelegramIcon />} href='https://t.me/optimum' plain={true} />
-            <Button target='_blank' icon={<MediumIcon />} href='https://medium.com/@optimum_network' plain={true} />
-        </Menu>
-    }
+  render() {
+    return (
+      <Menu
+        responsive={false}
+        justify='center'
+        inline={true}
+        direction='row'>
+        <Button
+          target='_blank'
+          icon={<RedditIcon />}
+          href='https://reddit.com/r/OptimumNetwork'
+          plain={true} />
+        <Button
+          target='_blank'
+          icon={<TwitterIcon />}
+          href='https://twitter.com/optimum_network'
+          plain={true} />
+        <Button
+          target='_blank'
+          icon={<GithubIcon />}
+          href='https://github.com/optimum-network'
+          plain={true} />
+        <Button
+          target='_blank'
+          icon={<TelegramIcon />}
+          href='https://t.me/optimum'
+          plain={true} />
+        <Button
+          target='_blank'
+          icon={<MediumIcon />}
+          href='https://medium.com/@optimum_network'
+          plain={true} />
+      </Menu>
+    );
+  }
 }
 
 export default class BasicApp extends Component {
-    render() {
+  render() {
+    const team = {
+      brian: {
+        name: 'Brian Wheeler',
+        bio: 'Brian is responsible for Optimum&rsquo;s technology stack. Building a platform with a fantastic user experience, high level of availability, and gold-standard security is at the center of Brian&rsquo;s mission. Brian&rsquo;s interest in decentralized technology began in 2015, two years later he discovered Ethereum and has been passionate about developing decentralized technology ever since.',
+        image: 'brian',
+        role: 'CTO | FOUNDER',
+        linkedin: 'https://www.linkedin.com/in/brian-wheeler-74ab3753/'
+      },
+      chris: {
+        name: 'Chris Perna',
+        bio: 'Chris leads Optimum’s Operations and Business Development efforts. Chris&rsquo; previous experience in growing both early stage startups and established technology leaders brings a robust perspective to the decentralized technology market. Chis has held positions at: LSI Logic, Integrated Devices Technologies, Comcore Semiconductor ACT Networks, and NXP Semiconductor.',
+        image: 'chris',
+        role: 'COO | FOUNDER',
+        linkedin: ''
+      },
+      martin: {
+        name: 'Martin Koistinen',
+        bio: 'A 25-year experienced software engineer whose experience spans Blockchain, Biometrics, Cryptography, Finance, Information Security, Machine Learning, Risk Management, Sustainability, and more.',
+        image: 'martin',
+        role: 'Advisor | Developer',
+        linkedin: 'https://www.linkedin.com/in/mkoistinen/'
+      }
+    };
 
-        const team = {
-            chris: {
-                name: 'Chris Perna',
-                bio: `Chris leads Optimum’s Operations and Business Development efforts.
-                    Chris' previous experience in growing both early stage startups and established
-                    technology leaders brings a robust perspective to the decentralized technology market.
-                    Chis has held positions at: LSI Logic, Integrated Devices Technologies,
-                    Comcore Semiconductor ACT Networks, and NXP Semiconductor.`,
-                image: 'chris',
-                role: 'COO | FOUNDER'
-            },
-            brian: {
-                name: 'Brian Wheeler',
-                bio:  `Brian is responsible for Optimum's technology stack.
-                        Building a platform with a fantastic user experience,
-                        high level of availability, and gold-standard security
-                        is at the center of Brian's mission.
-                        Brian's interest in decentralized technology began in 2015, two years later
-                        he discovered Ethereum and has been passionate about
-                        developing decentralized technology ever since.
-                    `,
-                image: 'brian',
-                role: 'CTO | FOUNDER'
-            }
-        }
+    return (
+      <App centered={false}>
+        {/* <Box colorIndex='warning' textAlign='center' align='center'>
+          <Paragraph size='medium' style={{ margin: '0.2em' }}>
+          <strong>
+          Looking for Optimum's <Anchor label='brand new release?' target='_blank' href='https://exchange.optimum.network' />
+          </strong>
+          </Paragraph>
+        </Box> */}
+        <Box colorIndex='light-1' full={true}>
+          <Header
+            className='header'
+            pad='medium'
+            justify='between'>
 
-        return (
-            <App centered={false}>
-                {/* <Box colorIndex='warning' textAlign='center' align='center'>
-                    <Paragraph size='medium' style={{margin: '0.2em'}}>
-                        <strong>
-                            Looking for Optimum's <Anchor label='brand new release?' target='_blank' href='https://exchange.optimum.network' />
-                        </strong>
-                    </Paragraph>
-                </Box> */}
-                <Box colorIndex='light-1' full={true} style={{
-                        // backgroundImage: 'url("/img/finance.jpg")'
-                    }}>
-                    <Header style={{background: 'none'}} pad='medium' justify='between'>
-                        <Box size='small'>
-                            <Image src="/img/optimum-logo-title-dark.png" />
-                        </Box>
+            <Box size='small'>
+              <Image src='/img/optimum-logo-title-dark.png' />
+            </Box>
 
-                        <Menu direction='row' inline={true}>
-                            <Button
-                                // style={{fontWeight: 'bolder', color: 'white'}}
-                                href='#team'
-                                label='TEAM'
-                                plain={true} />
-                            <Button
-                                // style={{fontWeight: 'bolder', color: 'white'}}
-                                href='https://t.me/optimum'
-                                target='_blank'
-                                label='TELEGRAM'
-                                plain={true} />
+            <Menu className='primary-menu' direction='row' inline={true}>
+              <Button
+                href='#team'
+                label='Team'
+                plain={true} />
 
-                            <Button
-                                // style={{fontWeight: 'bolder', color: 'white'}}
-                                href='#contact'
-                                label='CONTACT'
-                                plain={true} />
-                            <Button
-                                // style={{fontWeight: 'bolder', color: 'white'}}
-                                href='https://medium.com/@optimum_network'
-                                label='BLOG'
-                                plain={true} />
-                        </Menu>
-                    </Header>
+              <Button
+                className='external-link'
+                href='https://t.me/optimum'
+                target='_blank'
+                label='Telegram'
+                plain={true} />
 
-                    <Box pad='large' margin={{top: 'large'}} basis='full' style={{backgroundImage: "url('/img/triangle-bg.png')", backgroundSize: 'contain'}}>
-                        <Box size='xxlarge'>
-                            <Heading tag='h1' className='main-heading' strong={true}>
-                                Decentralized options trading.
-                            </Heading>
-                            <Paragraph size='large'>
-                                <b>
-                                    Peer-to-peer decentralized exchange for CALL and PUT options on ETH.
-                                </b>
-                            </Paragraph>
+              <Button
+                href='#contact'
+                label='Contact'
+                plain={true} />
 
-                            <Box direction='row'>
-                                <Box margin={{right: 'large', top: 'medium'}}>
-                                    <Button href='/' label='LEARN MORE' />
-                                </Box>
-                                <Box margin={{right: 'large', top: 'medium'}}>
-                                    <Button href='https://exchange.optimum.network' target='_blank' primary={true} label='START TRADING' />
-                                </Box>
-                            </Box>
-                        </Box>
-                    </Box>
+              <Button
+                className='external-link'
+                href='https://medium.com/@optimum_network'
+                label='Blog'
+                plain={true} />
+            </Menu>
+          </Header>
 
-                    {/* <Box>
-                        <Box alignSelf='center' textAlign='center' pad='large' margin={{top: 'large'}} size='xlarge'>
-                            <Heading tag='h1' strong={true}>
-                                Decentralized options trading.
-                            </Heading>
-                            <Paragraph size='large'>
-                                <strong>
-                                    Peer-to-peer decentralized exchange for CALL and PUT options on ETH.
-                                </strong>
-                            </Paragraph>
+          <Box
+            className='hero-section'
+            pad='large'
+            margin={{ top: 'large' }}
+            basis='full'>
 
-                            <Box align='center' pad='large'>
-                                <Button
-                                    href='https://exchange.optimum.network'
-                                    target='_blank'
-                                    primary={true}
-                                    label='START TRADING' />
-                            </Box>
+            <Box size='xxlarge'>
+              <Heading
+                tag='h1'
+                className='main-heading'
+                strong={true}>
+                Decentralized options trading.
 
+                <Paragraph className='main-subhead' size='large'>
+                  Peer-to-peer decentralized exchange for CALL and PUT options on ETH.
+                </Paragraph>
 
-                            <Box pad='large'>
-                                <SocialMenu />
-                            </Box>
-                        </Box>
-                    </Box> */}
+                <Box direction='row'>
+                  <Box margin={{ right: 'large', top: 'medium' }}>
+                    <Button
+                      className='action-btn'
+                      href='/#TODO'
+                      label='Learn More' />
+                  </Box>
+                  <Box margin={{ right: 'large', top: 'medium' }}>
+                    <Button
+                      className='action-btn'
+                      href='https://exchange.optimum.network'
+                      target='_blank'
+                      primary={true}
+                      label='Start Trading' />
+                  </Box>
                 </Box>
+              </Heading>
+            </Box>
+          </Box>
+        </Box>
 
-                <Box id='roadmap' align='center' colorIndex='light-2'>
-                    {/* <Box direction='row' size='xxlarge' justify='around' align='center'>
-                        <Box size='medium'>
-                            <Box responsive={false} colorIndex='neutral-3-a' direction='row' justify='between' align='center' pad={{horizontal: 'small'}}>
-                                <Box pad={{vertical: 'small'}}>
-                                    Q3: API RELEASE
-                                </Box>
-                                <ActionIcon />
-                            </Box>
-                            <Box colorIndex='light-1' pad={{vertical: 'small'}}>
-                                <ul>
-                                    <li>Programmable API for algorithmic traders</li>
-                                </ul>
-                            </Box>
-                        </Box>
-                        <Box colorIndex='neutral-3-a' style={{borderRadius: '50%', padding: '4px', height: '60px', width: '60px'}}>
-                            <Box colorIndex='light-1' style={{width: '100%', height: '100%', borderRadius: '50%'}} align='center' justify='center'>
-                                Q3
-                            </Box>
-                        </Box>
-                        <Box size='medium'>
-                        </Box>
-                    </Box> */}
-                    <Box size='xxlarge' pad='large' align='center'>
-                        <Heading tag='h2'>Roadmap</Heading>
-                        <img src='img/roadmap.png' />
-                    </Box>
-                </Box>
+        <Box
+          id='roadmap'
+          align='center'
+          colorIndex='light-2'>
+          <Box size='xxlarge' pad='large' align='center'>
+            <Heading tag='h2'>Roadmap</Heading>
+            <img src='img/roadmap.png' alt='roadmap' />
+          </Box>
+        </Box>
 
-                <Box id='tutorial' align='center' colorIndex='neutral-4' pad='large'>
-                    <Heading strong={true}>Beta Tutorial</Heading>
-                    <iframe style={{border: 0}} src="https://drive.google.com/file/d/1fqQZjJ91TVSdPgyz3XrF7JfvGmMdt6BX/preview" width="640" height="480"></iframe>
-                </Box>
+        <Box
+          id='tutorial'
+          align='center'
+          colorIndex='neutral-4'
+          pad='large'>
+          <Heading strong={true}>
+            Beta Tutorial
+          </Heading>
+          <iframe
+            title='preview'
+            style={{ border: 0 }}
+            src='https://drive.google.com/file/d/1fqQZjJ91TVSdPgyz3XrF7JfvGmMdt6BX/preview'
+            width='640'
+            height='480'
+          />
+        </Box>
 
-                <Box id='team' align='center' colorIndex='neutral-1-a' pad='large'>
-                    <Box size='xxlarge'>
-                        <Heading strong={true}>Team</Heading>
-                        <Box direction='row' justify='around'>
-                            <TeamMember info={team.brian} />
-                            <TeamMember info={team.chris} />
-                        </Box>
-                    </Box>
-                </Box>
+        <Box
+          id='team'
+          align='center'
+          colorIndex='neutral-1-a'
+          pad='large'>
+          <Box size='xxlarge'>
+            <Heading strong={true}>Team</Heading>
+            <Box direction='row' justify='around'>
+              <TeamMember info={team.brian} />
+              <TeamMember info={team.chris} />
+              <TeamMember info={team.martin} />
+            </Box>
+          </Box>
+        </Box>
 
-                <Box id='contact' full={true} align='center' pad={{vertical: 'large', horizontal: 'small'}} justify='center' direction='row'>
-                    <Form method='post'>
-                        {/* Netlify form config */}
-                        <input type="hidden" name="form-name" value="contact" />
+        <Box
+          id='contact'
+          full={true}
+          align='center'
+          pad={{ vertical: 'large', horizontal: 'small' }}
+          justify='center'
+          direction='row'>
+          <Form method='post'>
+            {/* Netlify form config */}
+            <input
+              type='hidden'
+              name='form-name'
+              value='contact' />
 
-                        <Heading>Contact Us</Heading>
-                        <Paragraph>
-                            Interested in Optimum? We'd love to hear from you.
-                            <br />
-                            <br />
-                            You may prefer to message us on one of our social media
-                            pages; the links are in the footer.
-                        </Paragraph>
-                        <FormField label='Name'>
-                            <TextInput name='name' />
-                        </FormField>
-                        <FormField label='Email'>
-                            <TextInput type='email' name='email' />
-                        </FormField>
-                        <FormField label='Message'>
-                            <textarea rows='4' name='message' />
-                        </FormField>
+            <Heading>
+              Contact Us
+            </Heading>
+            <Paragraph>
+              Interested in Optimum? We&rsquo;d love to hear from you.
+            </Paragraph>
+            <Paragraph>
+              You may prefer to message us on one of our social media
+              pages; the links are in the footer.
+            </Paragraph>
+            <FormField label='Name'>
+              <TextInput name='name' />
+            </FormField>
+            <FormField label='Email'>
+              <TextInput type='email' name='email' />
+            </FormField>
+            <FormField label='Message'>
+              <textarea rows='4' name='message' />
+            </FormField>
 
-                        <Button fill={true} type='submit' style={{border: 0}}>
-                            <Box margin={{top: 'small'}} textAlign='center' colorIndex='neutral-4' basis='full' flex={true} pad='medium'>
-                                Submit
-                            </Box>
-                        </Button>
-                    </Form>
-                </Box>
+            <Button
+              fill={true}
+              type='submit'
+              style={{ border: 0 }}>
+              <Box
+                margin={{ top: 'small' }}
+                textAlign='center'
+                colorIndex='neutral-4'
+                basis='full'
+                flex={true}
+                pad='medium'>
+                Submit
+              </Box>
+            </Button>
+          </Form>
+        </Box>
 
-                <Footer colorIndex='grey-2' direction='column'>
-                    <Box pad='medium'>
-                        <SocialMenu />
-                    </Box>
+        <Footer colorIndex='grey-2' direction='column'>
+          <Box pad='medium'>
+            <SocialMenu />
+          </Box>
 
-                    <Box full='horizontal' justify='around' pad='small' direction='row'>
-                        <Box>
-                            <Image size='small'  src="/img/optimum-logo-title-light.png" />
-                        </Box>
+          <Box
+            full='horizontal'
+            justify='around'
+            pad='small'
+            direction='row'>
+            <Box>
+              <Image
+                size='small'
+                src='/img/optimum-logo-title-light.png' />
+            </Box>
 
-                        <Box>
-                            <Paragraph>
-                                © DECENTRALIZED TECHNOLOGY VENTURES 2018. ALL RIGHTS RESERVED.
-                            </Paragraph>
-                        </Box>
-                    </Box>
+            <Box>
+              <Paragraph>
+                © DECENTRALIZED TECHNOLOGY VENTURES 2018. ALL RIGHTS RESERVED.
+              </Paragraph>
+            </Box>
+          </Box>
 
-                    <Box align='center' textAlign='center' pad='small'>
-                        <small>
-                            Cover photo provided by Andreas Poike via Flickr. <Anchor href='https://www.flickr.com/photos/andreas_poike' label='https://www.flickr.com/photos/andreas_poike' />
-                        </small>
-                    </Box>
-                </Footer>
-            </App>
-        );
-    }
+          <Box
+            align='center'
+            textAlign='center'
+            pad='small'>
+            <small>
+              Cover photo provided by Andreas Poike via Flickr. <Anchor href='https://www.flickr.com/photos/andreas_poike' label='https://www.flickr.com/photos/andreas_poike' />
+            </small>
+          </Box>
+        </Footer>
+      </App>
+    );
+  }
 }
 
 class TeamMember extends Component {
-    render() {
-        const { info: { name, image, bio, role } } = this.props
+  render() {
+    const { info: { name, image, bio, role } } = this.props;
 
-        return <Box size='medium'>
-            <Box align='center'>
-                <Box>
-                    <Image style={{borderRadius: '50%', filter: 'grayscale(100%)'}} size='small' src={`img/team/${image}.jpg`} />
-                </Box>
-                <span style={{fontSize: '1.5em'}}>
-                    <b>{name}</b>
-                </span>
-                <span>
-                    {role}
-                </span>
-            </Box>
-            <Box pad='small'>
-                <span>
-                    {bio}
-                </span>
-            </Box>
+    return (
+      <Box size='medium'>
+        <Box align='center'>
+          <Box>
+            <Image
+              className='meta-image'
+              size='small'
+              src={`img/team/${image}.jpg`} />
+          </Box>
+          <span className='meta-name'>{name}</span>
+          <span className='meta-role'>{role}</span>
         </Box>
-    }
+        <Box pad='small'>
+          <span className='meta-bio'>{bio}</span>
+        </Box>
+        <Box align='center'>
+          <a href='{linkedin}'>LinkedIn</a>
+        </Box>
+      </Box>
+    );
+  }
 }
+
+TeamMember.propTypes = {
+  info: PropTypes.object.isRequired
+};

@@ -9,3 +9,45 @@ html body .main-heading {
         font-size: 3em;
     }
 }
+
+.hero-section {
+  background-image: url('/img/triangle-bg.png');
+  background-size: 'contain';
+}
+
+.primary-menu {
+  a span {
+    font-weight: 'bolder';
+    color: #4a4a4a;
+  }
+}
+
+.header {
+  background-color: #fbfafc;
+}
+
+.main-header {
+  color: #605970;
+}
+
+.main-subhead {
+  font-weight: bold;
+}
+
+.action-btn {
+  text-transform: uppercase;
+}
+
+.meta-image {
+  border-radius: 50%;
+  filter: grayscale(100%);
+}
+
+.meta-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.meta-role {
+  text-transform: uppercase;
+}
