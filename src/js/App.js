@@ -14,6 +14,7 @@ import Paragraph from 'grommet/components/Paragraph';
 // import ActionIcon from 'grommet/components/icons/base/Action';
 // import ShareIcon from 'grommet/components/icons/base/Share';
 import GithubIcon from 'grommet/components/icons/base/SocialGithub';
+import LinkedInIcon from 'grommet/components/icons/base/SocialLinkedIn';
 import MediumIcon from 'grommet/components/icons/base/SocialMedium';
 import RedditIcon from 'grommet/components/icons/base/SocialReddit';
 import SVGIcon from 'grommet/components/SVGIcon';
@@ -87,26 +88,61 @@ class SocialMenu extends Component {
   }
 }
 
+class TeamMember extends Component {
+  render() {
+    const { info: { name, image, bio, role, linkedin } } = this.props;
+
+    return (
+      <Box size='medium' className='team-box'>
+        <Box>
+          <Box className='meta-heading'>
+            <Image
+              className='meta-image'
+              size='small'
+              src={`img/team/${image}.jpg`} />
+            <Box className='meta-box'>
+              <span className='meta-name'>{name}</span>
+              <span className='meta-role'>{role}</span>
+            </Box>
+          </Box>
+        </Box>
+        <Box pad='small'>
+          <span className='meta-bio'>{bio}</span>
+        </Box>
+        <Box className='meta-link' align='center'>
+          <Anchor href={linkedin}>
+            <LinkedInIcon size='medium' colorIndex='grey-1' />
+          </Anchor>
+        </Box>
+      </Box>
+    );
+  }
+}
+
+TeamMember.propTypes = {
+  info: PropTypes.object.isRequired
+};
+
 export default class BasicApp extends Component {
   render() {
     const team = {
       brian: {
         name: 'Brian Wheeler',
-        bio: 'Brian is responsible for Optimum&rsquo;s technology stack. Building a platform with a fantastic user experience, high level of availability, and gold-standard security is at the center of Brian&rsquo;s mission. Brian&rsquo;s interest in decentralized technology began in 2015, two years later he discovered Ethereum and has been passionate about developing decentralized technology ever since.',
+        bio: 'Brian is responsible for Optimum’s technology stack. Building a platform with a fantastic user experience, high level of availability, and gold-standard security is at the center of Brian’s mission.',
         image: 'brian',
         role: 'CTO | FOUNDER',
         linkedin: 'https://www.linkedin.com/in/brian-wheeler-74ab3753/'
       },
       chris: {
         name: 'Chris Perna',
-        bio: 'Chris leads Optimum’s Operations and Business Development efforts. Chris&rsquo; previous experience in growing both early stage startups and established technology leaders brings a robust perspective to the decentralized technology market. Chis has held positions at: LSI Logic, Integrated Devices Technologies, Comcore Semiconductor ACT Networks, and NXP Semiconductor.',
+        bio: 'Chris leads Optimum’s Operations and Business Development efforts. Chris’ previous experience in growing both early stage startups and established technology leaders brings a robust perspective to the decentralized technology market.',
         image: 'chris',
         role: 'COO | FOUNDER',
         linkedin: ''
       },
       martin: {
         name: 'Martin Koistinen',
-        bio: 'A 25-year experienced software engineer whose experience spans Blockchain, Biometrics, Cryptography, Finance, Information Security, Machine Learning, Risk Management, Sustainability, and more.',
+        bio: 'Martin is a 25+ year veteran software engineer whose experience spans Blockchain, Biometrics, Cryptography, Finance, Information Security, Machine Learning, Risk Management, Sustainability, and more.',
         image: 'martin',
         role: 'Advisor | Developer',
         linkedin: 'https://www.linkedin.com/in/mkoistinen/'
@@ -125,6 +161,7 @@ export default class BasicApp extends Component {
         <Box colorIndex='light-1' full={true}>
           <Header
             className='header'
+            colorIndex='light-2'
             pad='medium'
             justify='between'>
 
@@ -167,52 +204,41 @@ export default class BasicApp extends Component {
             <Box size='xxlarge'>
               <Heading
                 tag='h1'
-                className='main-heading'
+                className='main-header'
                 strong={true}>
                 Decentralized options trading.
-
-                <Paragraph className='main-subhead' size='large'>
-                  Peer-to-peer decentralized exchange for CALL and PUT options on ETH.
-                </Paragraph>
-
-                <Box direction='row'>
-                  <Box margin={{ right: 'large', top: 'medium' }}>
-                    <Button
-                      className='action-btn'
-                      href='/#TODO'
-                      label='Learn More' />
-                  </Box>
-                  <Box margin={{ right: 'large', top: 'medium' }}>
-                    <Button
-                      className='action-btn'
-                      href='https://exchange.optimum.network'
-                      target='_blank'
-                      primary={true}
-                      label='Start Trading' />
-                  </Box>
-                </Box>
               </Heading>
-            </Box>
-          </Box>
-        </Box>
+              <Heading tag='h2' className='main-subheader'>
+                Peer-to-peer decentralized exchange for CALL and PUT options on ETH.
+              </Heading>
 
-        <Box
-          id='roadmap'
-          align='center'
-          colorIndex='light-2'>
-          <Box size='xxlarge' pad='large' align='center'>
-            <Heading tag='h2'>Roadmap</Heading>
-            <img src='img/roadmap.png' alt='roadmap' />
+              <Box direction='row'>
+                <Box margin={{ right: 'large', top: 'medium' }}>
+                  <Button
+                    className='action-btn'
+                    href='/#TODO'
+                    label='Learn More' />
+                </Box>
+                <Box margin={{ right: 'large', top: 'medium' }}>
+                  <Button
+                    className='action-btn'
+                    href='https://exchange.optimum.network'
+                    target='_blank'
+                    primary={true}
+                    label='Start Trading' />
+                </Box>
+              </Box>
+            </Box>
           </Box>
         </Box>
 
         <Box
           id='tutorial'
           align='center'
-          colorIndex='neutral-4'
+          colorIndex='light-2'
           pad='large'>
-          <Heading strong={true}>
-            Beta Tutorial
+          <Heading className='section-header'>
+            How It Works
           </Heading>
           <iframe
             title='preview'
@@ -224,12 +250,24 @@ export default class BasicApp extends Component {
         </Box>
 
         <Box
+          id='roadmap'
+          align='center'
+          colorIndex='light-1'
+        >
+          <Box size='xxlarge' pad='large' align='center'>
+            <Heading className='section-header'>Roadmap</Heading>
+            <img src='img/roadmap.png' alt='roadmap' />
+          </Box>
+        </Box>
+
+        <Box
           id='team'
           align='center'
-          colorIndex='neutral-1-a'
-          pad='large'>
+          pad='large'
+          colorIndex='light-2'
+        >
           <Box size='xxlarge'>
-            <Heading strong={true}>Team</Heading>
+            <Heading className='section-header'>Our Team</Heading>
             <Box direction='row' justify='around'>
               <TeamMember info={team.brian} />
               <TeamMember info={team.chris} />
@@ -240,56 +278,51 @@ export default class BasicApp extends Component {
 
         <Box
           id='contact'
-          full={true}
+          colorIndex='light-1'
           align='center'
-          pad={{ vertical: 'large', horizontal: 'small' }}
-          justify='center'
-          direction='row'>
-          <Form method='post'>
-            {/* Netlify form config */}
-            <input
-              type='hidden'
-              name='form-name'
-              value='contact' />
+          pad='large'
+          direction='column'>
 
-            <Heading>
-              Contact Us
-            </Heading>
-            <Paragraph>
+          <Box align='center'>
+            <Heading className='section-header'>Contact Us</Heading>
+            <Heading tag='h2' className='section-subheader'>
               Interested in Optimum? We&rsquo;d love to hear from you.
-            </Paragraph>
-            <Paragraph>
-              You may prefer to message us on one of our social media
-              pages; the links are in the footer.
-            </Paragraph>
-            <FormField label='Name'>
-              <TextInput name='name' />
-            </FormField>
-            <FormField label='Email'>
-              <TextInput type='email' name='email' />
-            </FormField>
-            <FormField label='Message'>
-              <textarea rows='4' name='message' />
-            </FormField>
+            </Heading>
+          </Box>
 
-            <Button
-              fill={true}
-              type='submit'
-              style={{ border: 0 }}>
-              <Box
-                margin={{ top: 'small' }}
-                textAlign='center'
-                colorIndex='neutral-4'
-                basis='full'
-                flex={true}
-                pad='medium'>
-                Submit
+          <Box padding='large'>
+            <Form method='post' plain={true}>
+              {/* Netlify form config */}
+              <Paragraph>
+                You may prefer to message us on one of our social media
+                pages; the links are in the footer.
+              </Paragraph>
+              <input
+                type='hidden'
+                name='form-name'
+                value='contact' />
+              <FormField label='Name'>
+                <TextInput name='name' />
+              </FormField>
+              <FormField label='Email'>
+                <TextInput type='email' name='email' />
+              </FormField>
+              <FormField label='Message'>
+                <textarea rows='4' name='message' />
+              </FormField>
+              <Box direction='row' pad={{ vertical: 'small' }}>
+                <Button
+                  className='action-btn'
+                  primary={true}
+                  label='Submit'
+                  type='submit'
+                />
               </Box>
-            </Button>
-          </Form>
+            </Form>
+          </Box>
         </Box>
 
-        <Footer colorIndex='grey-2' direction='column'>
+        <Footer colorIndex='neutral-4-a' direction='column'>
           <Box pad='medium'>
             <SocialMenu />
           </Box>
@@ -307,52 +340,12 @@ export default class BasicApp extends Component {
 
             <Box>
               <Paragraph>
-                © DECENTRALIZED TECHNOLOGY VENTURES 2018. ALL RIGHTS RESERVED.
+                &copy; DECENTRALIZED TECHNOLOGY VENTURES 2018. ALL RIGHTS RESERVED.
               </Paragraph>
             </Box>
-          </Box>
-
-          <Box
-            align='center'
-            textAlign='center'
-            pad='small'>
-            <small>
-              Cover photo provided by Andreas Poike via Flickr. <Anchor href='https://www.flickr.com/photos/andreas_poike' label='https://www.flickr.com/photos/andreas_poike' />
-            </small>
           </Box>
         </Footer>
       </App>
     );
   }
 }
-
-class TeamMember extends Component {
-  render() {
-    const { info: { name, image, bio, role } } = this.props;
-
-    return (
-      <Box size='medium'>
-        <Box align='center'>
-          <Box>
-            <Image
-              className='meta-image'
-              size='small'
-              src={`img/team/${image}.jpg`} />
-          </Box>
-          <span className='meta-name'>{name}</span>
-          <span className='meta-role'>{role}</span>
-        </Box>
-        <Box pad='small'>
-          <span className='meta-bio'>{bio}</span>
-        </Box>
-        <Box align='center'>
-          <a href='{linkedin}'>LinkedIn</a>
-        </Box>
-      </Box>
-    );
-  }
-}
-
-TeamMember.propTypes = {
-  info: PropTypes.object.isRequired
-};
