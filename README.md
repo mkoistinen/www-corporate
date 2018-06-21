@@ -26,6 +26,12 @@ To run this application, execute the following commands:
     $ npm test
     ```
 
+  5. If the output has intentionally changed, update the snapshot with:
+
+    ```
+    $ yarn jest -u
+    ```
+
 ## Component Documentation
 
 This site uses Grommet for prebuilt react components: http://grommet.io/docs/components/
