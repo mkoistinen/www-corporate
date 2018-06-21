@@ -14,7 +14,7 @@ import Paragraph from 'grommet/components/Paragraph';
 // import ActionIcon from 'grommet/components/icons/base/Action';
 // import ShareIcon from 'grommet/components/icons/base/Share';
 import GithubIcon from 'grommet/components/icons/base/SocialGithub';
-import LinkedInIcon from 'grommet/components/icons/base/SocialLinkedIn';
+import LinkedinIcon from 'grommet/components/icons/base/SocialLinkedIn';
 import MediumIcon from 'grommet/components/icons/base/SocialMedium';
 import RedditIcon from 'grommet/components/icons/base/SocialReddit';
 import SVGIcon from 'grommet/components/SVGIcon';
@@ -110,8 +110,8 @@ class TeamMember extends Component {
           <span className='meta-bio'>{bio}</span>
         </Box>
         <Box className='meta-link' align='center'>
-          <Anchor target='_blank' href={linkedin}>
-            <LinkedInIcon size='medium' colorIndex='grey-1' />
+          <Anchor href={linkedin}>
+            <LinkedinIcon size='medium' colorIndex='grey-1' />
           </Anchor>
         </Box>
       </Box>
@@ -120,6 +120,33 @@ class TeamMember extends Component {
 }
 
 TeamMember.propTypes = {
+  info: PropTypes.object.isRequired
+};
+
+class Benefit extends Component {
+  render() {
+    const { info: { title, image, description } } = this.props;
+
+    return (
+      <Box basis='1/3' flex={false} pad='large' className='benefit-box'>
+        <Box align='center'>
+          <Image
+            className='meta-image'
+            size='small'
+            src={`img/benefits/${image}`} />
+        </Box>
+        <Box align='center'>
+          <span className='meta-title'>{title}</span>
+        </Box>
+        <Box>
+          <span className='meta-description'>{description}</span>
+        </Box>
+      </Box>
+    );
+  }
+}
+
+Benefit.propTypes = {
   info: PropTypes.object.isRequired
 };
 
@@ -146,6 +173,24 @@ export default class BasicApp extends Component {
         image: 'martin',
         role: 'Advisor | Developer',
         linkedin: 'https://www.linkedin.com/in/mkoistinen/'
+      }
+    };
+
+    const benefits = {
+      decentralized: {
+        title: 'Decentralized',
+        image: 'decentralized.png',
+        description: 'Optimum provides an off-chain order book and a user interface to our smart contract. Trading and contract settlement are completely peer-to-peer.'
+      },
+      trustless: {
+        title: 'Trustless',
+        image: 'trustless.png',
+        description: 'Optimum never takes custody of users’ funds. Users’ funds are held by an open source smart contract that is easily audited against vulnerabilities and backdoors.'
+      },
+      collateralized: {
+        title: 'Collateralized',
+        image: 'collateralized.png',
+        description: 'Options contracts are 100% collateralized via our decentralized escrow system. When a contract holder demands delivery of a contract, the assets are automatically exchanged between the contract holder and the seller.'
       }
     };
 
@@ -199,9 +244,9 @@ export default class BasicApp extends Component {
             className='hero-section'
             pad='large'
             margin={{ top: 'large' }}
-            basis='full'>
-
-            <Box size='xxlarge'>
+            basis='full'
+          >
+            <Box size='large'>
               <Heading
                 tag='h1'
                 className='main-header'
@@ -233,7 +278,22 @@ export default class BasicApp extends Component {
         </Box>
 
         <Box
-          id='team'
+          id='benefits'
+          className='benefits-box'
+          align='center'
+          alignContent='around'
+          colorIndex='light-1'
+          pad='large'
+        >
+          <Box direction='row' justify='around'>
+            <Benefit info={benefits.decentralized} />
+            <Benefit info={benefits.trustless} />
+            <Benefit info={benefits.collateralized} />
+          </Box>
+        </Box>
+
+        <Box
+          id='tutorial'
           align='center'
           pad='large'
           colorIndex='light-2'
@@ -264,7 +324,7 @@ export default class BasicApp extends Component {
           align='center'
           pad='large'
           colorIndex='light-2'
-          pad='large'>
+        >
           <Heading className='section-header'>
             How It Works
           </Heading>
